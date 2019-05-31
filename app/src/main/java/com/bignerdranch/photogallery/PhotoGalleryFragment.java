@@ -22,7 +22,6 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 public class PhotoGalleryFragment extends Fragment {
-
     private static final String TAG = "PhotoGalleryFragment";
 
     private RecyclerView mPhotoRecyclerView;
@@ -169,6 +168,7 @@ public class PhotoGalleryFragment extends Fragment {
         @Override
         public void onBindViewHolder(PhotoHolder photoHolder, int position) {
             GalleryItem galleryItem = mGalleryItems.get(position);
+            /*photoHolder.bindGalleryItem(galleryItem);*/
             Drawable placeholder = getResources().getDrawable(R.drawable.bill_up_close);
             photoHolder.bindDrawable(placeholder);
             mThumbnailDownloader.queueThumbnail(photoHolder, galleryItem.getmUrl());
@@ -205,4 +205,5 @@ public class PhotoGalleryFragment extends Fragment {
         }
 
     }
+
 }
